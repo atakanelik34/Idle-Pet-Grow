@@ -10,7 +10,7 @@ export const FeedAnimation: React.FC = () => {
       setShowAnimation(true);
       const timer = setTimeout(() => {
         setShowAnimation(false);
-      }, 1500);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [latestAction]);
@@ -18,11 +18,11 @@ export const FeedAnimation: React.FC = () => {
   if (!showAnimation) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-[200] pointer-events-none">
+    <div className="fixed inset-0 flex items-center justify-center z-[200] pointer-events-none bg-black/30">
       <img
         src="/feed-animation.gif"
         alt="Feed animation"
-        className="w-64 h-64 object-contain drop-shadow-2xl"
+        className="w-screen h-screen object-cover"
       />
     </div>
   );
